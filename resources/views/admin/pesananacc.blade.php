@@ -15,7 +15,8 @@
             <div class="card">
                 <div class="card-header">
                     <h4>Data Produk Majoo</h4><br>
-                    <p>Halaman ini akan menampilkan data Produk majoo yang telah dipesan oleh customer dan telah dikonfirmasi admin.</p>
+                    <p>Halaman ini akan menampilkan data Produk majoo yang telah dipesan oleh customer dan telah
+                        dikonfirmasi admin.</p>
                     @if (count($errors) > 0)
                     <div class="alert alert-danger">
                         <ul>
@@ -41,7 +42,6 @@
                             <th>Total Biaya</th>
                             <th>Nama Pemesan</th>
                             <th>Tanggal Pesan</th>
-                            <th>Tindakan</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -55,10 +55,6 @@
                             <td>Rp: {{($daduk->jumlah)*($daduk->produkPesanan->harga)}}</td>
                             <td>{{$daduk->userPesanan->name}}</td>
                             <td>{{\Carbon\Carbon::parse($daduk->create_at)->format('j F, Y')}}</td>
-                            <td><a href="/konfirmasi/{{$daduk->id_pesanan}}"
-                                class="btn btn-danger btn-sm" style="display: inline-block;"
-                                onclick="return confirm('konfirmasi pemesanan bernomor {{$loop->index+1}}?')"><i
-                                  class="fa fa-edit" aria-hidden="true"></i></a></td> 
                             @endif
                             @endforeach
                         </tr>
@@ -174,7 +170,7 @@
             </button>
         </div>
     </div>
-    
+
     <div class="modal fade" id="editprod" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
@@ -213,7 +209,7 @@
                                                         <input type="text" name="name2" id="name2" class="form-control"
                                                             id="exampleInputFile" placeholder="masukkan nama produk"
                                                             required />
-                                                            <input type="hidden" name="id_produk" id="id_produk">
+                                                        <input type="hidden" name="id_produk" id="id_produk">
                                                     </div>
                                                     <div class="form-group">
                                                         <label for="exampleInputFile">
