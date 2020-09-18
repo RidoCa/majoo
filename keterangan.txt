@@ -1,0 +1,3 @@
+baik member atau admin diharuskan login
+halaman login registrasi admin : /regisadmin
+lakukan migrate database namun apabila gagal sudah saya sediakan file db nya
